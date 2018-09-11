@@ -36,34 +36,77 @@ public class Commande {
 	@Column(name="date_fin")
 	private Date date_fin;
 	
-
+	
 	
 	@ManyToOne
 	@JoinColumn(name = "id_client")
 	private Client client;
-;
-
 	
 
-/*	@OneToMany
-	@JoinColumn(name = "id_utilisateur")
-	private Set<Todo> taches;
-
-	public Client( ) {
-		this.taches = new HashSet<>();
-}
-
-	public Set<Todo> getTaches() {
-		return taches;
+	
+	public Commande() {
 	}
 
-	public void setTaches(Set<Todo> taches) {
-		this.taches = taches;
+
+	public Integer getId_commande() {
+		return id_commande;
+	}
+
+
+	public void setId_commande(Integer id_commande) {
+		this.id_commande = id_commande;
+	}
+
+
+	public Date getDate_commande() {
+		return date_commande;
+	}
+
+
+	public void setDate_commande(Date date_commande) {
+		this.date_commande = date_commande;
+	}
+
+
+	public Float getTotal_ht() {
+		return total_ht;
+	}
+
+
+	public void setTotal_ht(Float total_ht) {
+		this.total_ht = total_ht;
+	}
+
+
+	public Integer getRemise() {
+		return remise;
+	}
+
+
+	public void setRemise(Integer remise) {
+		this.remise = remise;
+	}
+
+
+	public Date getDate_fin() {
+		return date_fin;
+	}
+
+
+	public void setDate_fin(Date date_fin) {
+		this.date_fin = date_fin;
+	}
+
+
+	public Client getClient() {
+		return client;
+	}
+
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 	
-	public void addTaches(Todo t) {
-		taches.add(t);
-	}
-*/	
+	
 		
 }

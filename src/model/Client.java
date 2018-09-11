@@ -21,7 +21,7 @@ public class Client {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_client")
-	private Integer id_clientid;
+	private Integer id_client;
 
 	@Column(name="nom",length = 50)
 	private String nom;
@@ -58,13 +58,17 @@ public class Client {
 	
 	@Column(name="date_paiement")
 	private Date date_paiement;
-
-	public Integer getId_clientid() {
-		return id_clientid;
+	
+	public Client() {
+		
 	}
 
-	public void setId_clientid(Integer id_clientid) {
-		this.id_clientid = id_clientid;
+	public Integer getId_client() {
+		return id_client;
+	}
+
+	public void setId_clientid(Integer id_client) {
+		this.id_client = id_client;
 	}
 
 	public String getNom() {
