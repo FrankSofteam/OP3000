@@ -6,19 +6,18 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import helpers.HibernateHelper;
-import model.Todo;
-import model.Client;
+import model.Produit;
 
-public class TodoDAO {
+public class ProduitDAO {
 
-	public static Stream<Todo> list() {
+	public static Stream<Produit> list() {
 		Session s =HibernateHelper.getSessionFactory().openSession();
 		Transaction t = null;
-		Stream<Todo> result = null;
+		Stream<Produit> result = null;
 		try {
 			t = s.beginTransaction();
 			
-			result = s.createQuery("FROM Taches").list().stream();
+			result = s.createQuery("FROM Produits").list().stream();
 			
 		t.commit();
 		} catch(Exception e) {
@@ -30,25 +29,24 @@ public class TodoDAO {
 		return result;
 	}
 
-	public static Todo create(Todo t) {
+	public static Produit create(Produit pro) {
         Session s = HibernateHelper.getSessionFactory().openSession();
-        Transaction tx = null;
+        Transaction t = null;
 
         try {
-            tx = s.beginTransaction();
+            t = s.beginTransaction();
             
             // CODE
-            s.save(t);
+            s.save(pro);
             
-            tx.commit();
+            t.commit();
         } catch(Exception e) {
             if(t != null)
-                tx.rollback();
+                t.rollback();
         } finally {
             s.close();
         }
         
-        return t;
+        return pro;
     }
-	
 }

@@ -11,7 +11,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import dao.TodoDAO;
+import dao.ProduitDAO;
 import model.Todo;
 
 @Path("/todos")
@@ -19,14 +19,14 @@ public class Todos {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Set<Todo> list() {
-		return TodoDAO.list().collect(Collectors.toSet());
+		return ProduitDAO.list().collect(Collectors.toSet());
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/{id}")
 	public Todo find(@PathParam("id") Integer identifiant) {
-		return TodoDAO
+		return ProduitDAO
 				.list()
 				.filter(t -> t.getId() == identifiant)
 				.findFirst()
@@ -37,6 +37,6 @@ public class Todos {
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
 	public Todo create(Todo t) {
-		return TodoDAO.create(t);
+		return ProduitDAO.create(t);
 	}
 }

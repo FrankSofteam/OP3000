@@ -1,6 +1,5 @@
 package dao;
 
-import java.util.Set;
 import java.util.stream.Stream;
 
 import org.hibernate.Session;
@@ -9,7 +8,7 @@ import org.hibernate.Transaction;
 import helpers.HibernateHelper;
 import model.Client;
 
-public class UserDAO {
+public class ClientDAO {
 	public static Stream<Client> list() {
 		Session s =HibernateHelper.getSessionFactory().openSession();
 		Transaction t = null;
@@ -17,7 +16,7 @@ public class UserDAO {
 		try {
 			t = s.beginTransaction();
 			
-			result = s.createQuery("FROM utilisateurs").list().stream();
+			result = s.createQuery("FROM clients").list().stream();
 			
 		t.commit();
 		} catch(Exception e) {
@@ -28,14 +27,13 @@ public class UserDAO {
 		}
 		return null;
 	}
-
-	public static Client create(Client u) {
+	public static Client create(Client clt) {
 		Session s =HibernateHelper.getSessionFactory().openSession();
 		Transaction t = null;
 
 		try {
 			t = s.beginTransaction();
-			s.save(u);
+			s.save(clt);
 					
 		t.commit();
 		} catch(Exception e) {
@@ -44,6 +42,7 @@ public class UserDAO {
 		} finally {
 			s.close();
 		}
-		return u;
-}
+		return clt;
+
+	}
 }
