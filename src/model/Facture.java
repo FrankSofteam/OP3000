@@ -12,58 +12,90 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
 
-@Entity(name="Commandes")
-@Table(name="Commandes")
+@Entity(name="Factures")
+@Table(name="Factures")
 public class Facture {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	@Column(name="id_commande")
-	private Integer id_commande;
+	@Column(name="id_facture")
+	private Integer id_facture;
 		
-	@Column(name="date_commande")
-	private Date date_commande;
+	@Column(name="date_facture")
+	private Date date_facture;
 
 	@Column(name="total_ht",length = 10)
 	private Float total_ht;
-
-	@Column(name="remise")
-	private Integer remise;
-
-	@Column(name="date_fin")
-	private Date date_fin;
-	
 
 	
 	@ManyToOne
 	@JoinColumn(name = "id_client")
 	private Client client;
-;
+
+	@OneToOne
+	@JoinColumn(name = "id_abonnement")
+	private Abonnement abonnement;
 
 	
-
-/*	@OneToMany
-	@JoinColumn(name = "id_utilisateur")
-	private Set<Todo> taches;
-
-	public Client( ) {
-		this.taches = new HashSet<>();
-}
-
-	public Set<Todo> getTaches() {
-		return taches;
+	public Facture() {
 	}
 
-	public void setTaches(Set<Todo> taches) {
-		this.taches = taches;
+
+	public Integer getId_facture() {
+		return id_facture;
 	}
+
+
+	public void setId_facture(Integer id_facture) {
+		this.id_facture = id_facture;
+	}
+
+
+	public Date getDate_facture() {
+		return date_facture;
+	}
+
+
+	public void setDate_facture(Date date_facture) {
+		this.date_facture = date_facture;
+	}
+
+
+	public Float getTotal_ht() {
+		return total_ht;
+	}
+
+
+	public void setTotal_ht(Float total_ht) {
+		this.total_ht = total_ht;
+	}
+
+
+	public Client getClient() {
+		return client;
+	}
+
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
+
+	public Abonnement getAbonnement() {
+		return abonnement;
+	}
+
+
+	public void setAbonnement(Abonnement abonnement) {
+		this.abonnement = abonnement;
+	}
+
 	
-	public void addTaches(Todo t) {
-		taches.add(t);
-	}
-*/	
+	
+	
 		
 }

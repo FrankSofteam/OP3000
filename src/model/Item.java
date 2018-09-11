@@ -31,6 +31,10 @@ public class Item {
 	@JoinColumn(name="id_produit")
 	private Produit produit;
 	
+	@OneToOne
+	@JoinColumn(name="id_abonnement")
+	private Abonnement abonnement;
+	
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="id_commande")
 	private Commande commande;
