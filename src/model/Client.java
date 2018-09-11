@@ -17,7 +17,6 @@ import javax.persistence.Table;
 
 @Entity(name="Clients")
 @Table(name="Clients")
-
 public class Client {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -163,13 +162,6 @@ public class Client {
 	public void setDate_paiement(Date date_paiement) {
 		this.date_paiement = date_paiement;
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

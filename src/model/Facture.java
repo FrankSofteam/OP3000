@@ -18,7 +18,7 @@ import javax.persistence.Table;
 
 @Entity(name="Commandes")
 @Table(name="Commandes")
-public class Commande {
+public class Facture {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_commande")
