@@ -15,17 +15,16 @@ public class Produit {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_produit")
-	private Integer id;
+	private Integer id_produit;
+	
 	@Column(name="nom_produit",length=100)
-	private String nom;
+	private String nom_produit;
 	
 	@Column(name="tarif_produit")
-	private Integer tarif;
+	private Integer tarif_produit;
 	
-	@Column(name="periodicite_produit")
-	private String periodicite;
 	
-	@Column(name="stock_produit")
+	@Column(name="stock")
 	private boolean stock;
 	
 	@OneToOne
@@ -36,36 +35,28 @@ public class Produit {
 		
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getId_produit() {
+		return id_produit;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setId_produit(Integer id_produit) {
+		this.id_produit = id_produit;
 	}
 
-	public String getNom() {
-		return nom;
+	public String getNom_produit() {
+		return nom_produit;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setNom_produit(String nom_produit) {
+		this.nom_produit = nom_produit;
 	}
 
-	public Integer getTarif() {
-		return tarif;
+	public Integer getTarif_produit() {
+		return tarif_produit;
 	}
 
-	public void setTarif(Integer tarif) {
-		this.tarif = tarif;
-	}
-
-	public String getPeriodicite() {
-		return periodicite;
-	}
-
-	public void setPeriodicite(String periodicite) {
-		this.periodicite = periodicite;
+	public void setTarif_produit(Integer tarif_produit) {
+		this.tarif_produit = tarif_produit;
 	}
 
 	public boolean isStock() {
@@ -75,5 +66,7 @@ public class Produit {
 	public void setStock(boolean stock) {
 		this.stock = stock;
 	}
+
+
 	
 }
