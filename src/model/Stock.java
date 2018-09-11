@@ -12,11 +12,11 @@ public class Stock {
 	@Column(name="quantite_dispo")
 	private Integer quantite_dispo;
 	
-	@Column(name="quantite_commander")
-	private Integer quantite_commander;
+	@Column(name="quantite_commandee")
+	private Integer quantite_commandee;
 	
-	@Column(name="Quantite_reserver")
-	private Integer quantite_reserver;
+	@Column(name="quantite_reservee")
+	private Integer quantite_reservee;
 	
 	@OneToOne
 	@JoinColumn(name="id_produit")

@@ -16,7 +16,7 @@ public class ClientDAO {
 		try {
 			t = s.beginTransaction();
 			
-			result = s.createQuery("FROM clients").list().stream();
+			result = s.createQuery("FROM Clients").list().stream();
 			
 		t.commit();
 		} catch(Exception e) {

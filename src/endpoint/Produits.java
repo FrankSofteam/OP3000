@@ -12,23 +12,23 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import dao.ProduitDAO;
-import model.Todo;
+import model.Produit;
 
-@Path("/todos")
-public class Todos {
+@Path("/produits")
+public class Produits {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public Set<Todo> list() {
+	public Set<Produit> list() {
 		return ProduitDAO.list().collect(Collectors.toSet());
 	}
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	@Path("/{id}")
-	public Todo find(@PathParam("id") Integer identifiant) {
+	@Path("/{id_produit}")
+	public Produit find(@PathParam("id_produit") Integer identifiant) {
 		return ProduitDAO
 				.list()
-				.filter(t -> t.getId() == identifiant)
+				.filter(pro -> pro.getId_produit() == identifiant)
 				.findFirst()
 				.get();
 	}
@@ -36,7 +36,7 @@ public class Todos {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public Todo create(Todo t) {
-		return ProduitDAO.create(t);
+	public Produit create(Produit pro) {
+		return ProduitDAO.create(pro);
 	}
 }

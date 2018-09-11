@@ -16,7 +16,7 @@ public class CommandeDAO {
 		try {
 			t = s.beginTransaction();
 			
-			result = s.createQuery("FROM commandes").list().stream();
+			result = s.createQuery("FROM Commandes").list().stream();
 			
 		t.commit();
 		} catch(Exception e) {
