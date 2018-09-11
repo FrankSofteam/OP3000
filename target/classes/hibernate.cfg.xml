@@ -23,9 +23,17 @@
 		<!-- Afficher toutes les requêtes exécutées dans la console -->
 		<property name="show_sql">true</property>
 
-		<mapping class="model.User" />
-		<mapping class="model.Todo" />
+		<mapping class="model.Abonnement" />
+		<mapping class="model.Client" />
+		<mapping class="model.Commande" />
+		<mapping class="model.Facture" />
+		<mapping class="model.Item" />
+		<mapping class="model.Produit" />
+		<mapping class="model.Stock" />
+		
+				
 
 	</session-factory>
+	
 
 </hibernate-configuration>
