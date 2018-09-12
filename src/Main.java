@@ -1,8 +1,7 @@
 import org.hibernate.Session;
 
-import dao.UserDAO;
+import dao.ProduitDAO;
 import helpers.HibernateHelper;
-import model.Todo;
 import model.Client;
 import model.Produit;
 
@@ -46,7 +45,8 @@ public static void main(String[] args) {
 	pro.setNom_produit("Bouquet TV Or : Sport");
 	pro.setTarif_produit(10);
 	
-
+	ProduitDAO.create(pro8);
+	ProduitDAO.list().forEach(System.out::println);
 	
 
 	

@@ -97,16 +97,5 @@ public class Commande {
 		this.date_fin = date_fin;
 	}
 
-
-	public Client getClient() {
-		return client;
-	}
-
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
 	
-	
-		
 }

@@ -62,37 +62,4 @@ public class Abonnement {
 	}
 
 
-	public Client getClient() {
-		return client;
-	}
-
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
-
-
-	public Item getItem() {
-		return item;
-	}
-
-
-	public void setItem(Item item) {
-		this.item = item;
-	}
-
-
-	public Facture getFacture() {
-		return facture;
-	}
-
-
-	public void setFacture(Facture facture) {
-		this.facture = facture;
-	}
-	
-	
-	
-	
-	
 }

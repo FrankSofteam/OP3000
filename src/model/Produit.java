@@ -22,10 +22,18 @@ public class Produit {
 	
 	@Column(name="tarif_produit")
 	private Integer tarif_produit;
-	
-	
+		
 	@Column(name="stock")
 	private boolean stock;
+	
+	@Column(name="quantite_dispo")
+	private Integer quantite_dispo;
+	
+	@Column(name="quantite_commandee")
+	private Integer quantite_commandee;
+	
+	@Column(name="quantite_reservee")
+	private Integer quantite_reservee;
 	
 	@OneToOne
 	@JoinColumn(name="id_item")
@@ -67,6 +75,29 @@ public class Produit {
 		this.stock = stock;
 	}
 
+	public Integer getQuantite_dispo() {
+		return quantite_dispo;
+	}
+
+	public void setQuantite_dispo(Integer quantite_dispo) {
+		this.quantite_dispo = quantite_dispo;
+	}
+
+	public Integer getQuantite_commandee() {
+		return quantite_commandee;
+	}
+
+	public void setQuantite_commandee(Integer quantite_commandee) {
+		this.quantite_commandee = quantite_commandee;
+	}
+
+	public Integer getQuantite_reservee() {
+		return quantite_reservee;
+	}
+
+	public void setQuantite_reservee(Integer quantite_reservee) {
+		this.quantite_reservee = quantite_reservee;
+	}
 
 	
 }

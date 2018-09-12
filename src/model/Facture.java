@@ -74,28 +74,4 @@ public class Facture {
 		this.total_ht = total_ht;
 	}
 
-
-	public Client getClient() {
-		return client;
-	}
-
-
-	public void setClient(Client client) {
-		this.client = client;
-	}
-
-
-	public Abonnement getAbonnement() {
-		return abonnement;
-	}
-
-
-	public void setAbonnement(Abonnement abonnement) {
-		this.abonnement = abonnement;
-	}
-
-	
-	
-	
-		
 }

@@ -19,7 +19,7 @@ public class Item {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="id_item")
-	private Integer id;
+	private Integer id_item;
 	
 	@Column(name="date_debut")
 	private Date date_debut;
@@ -43,13 +43,18 @@ public class Item {
 		
 	}
 
-	public Integer getId() {
-		return id;
+
+	public Integer getId_item() {
+		return id_item;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+
+
+	public void setId_item(Integer id_item) {
+		this.id_item = id_item;
 	}
+
+
 
 	public Date getDate_debut() {
 		return date_debut;
@@ -67,20 +72,5 @@ public class Item {
 		this.date_fin = date_fin;
 	}
 
-	public Produit getProduit() {
-		return produit;
-	}
-
-	public void setProduit(Produit produit) {
-		this.produit = produit;
-	}
-
-	public Commande getCommande() {
-		return commande;
-	}
-
-	public void setCommande(Commande commande) {
-		this.commande = commande;
-	}
 	
 }
