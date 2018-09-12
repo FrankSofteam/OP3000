@@ -36,7 +36,7 @@ public class Produit {
 	private Integer quantite_reservee;
 	
 	@OneToOne
-	@JoinColumn(name="id_item")
+	@JoinColumn(name="id_item",nullable=true)
 	private Item item;
 	
 	public Produit() {
